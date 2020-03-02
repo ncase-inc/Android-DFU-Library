@@ -23,7 +23,7 @@
 package no.nordicsemi.android.dfu;
 
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /* package */ class DfuProgressInfo {
 	interface ProgressListener {
@@ -54,12 +54,13 @@ import android.support.annotation.NonNull;
 		return this;
 	}
 
+	@SuppressWarnings({"UnusedReturnValue", "SameParameterValue"})
 	DfuProgressInfo setTotalPart(final int totalParts) {
 		this.totalParts = totalParts;
 		return this;
 	}
 
-	public void setProgress(final int progress) {
+	void setProgress(final int progress) {
 		this.progress = progress;
 		mListener.updateProgressNotification();
 	}
@@ -108,10 +109,12 @@ import android.support.annotation.NonNull;
 		return bytesSent;
 	}
 
+	@SuppressWarnings("unused")
 	int getBytesReceived() {
 		return bytesReceived;
 	}
 
+	@SuppressWarnings("unused")
 	int getImageSizeInBytes() {
 		return imageSizeInBytes;
 	}
