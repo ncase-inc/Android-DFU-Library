@@ -489,6 +489,14 @@ import no.nordicsemi.android.error.LegacyDfuError;
 			logi("Transfer of " + mProgressInfo.getBytesSent() + " bytes has taken " + (endTime - startTime) + " ms");
 			mService.sendLogBroadcast(DfuBaseService.LOG_LEVEL_APPLICATION, "Upload completed in " + (endTime - startTime) + " ms");
 
+
+			try{
+				Thread.sleep(5);
+			}catch (Exception e){
+
+			}
+
+
 			// Send Validate request
 			logi("Sending Validate request (Op Code = 4)");
 			writeOpCode(mControlPointCharacteristic, OP_CODE_VALIDATE);
